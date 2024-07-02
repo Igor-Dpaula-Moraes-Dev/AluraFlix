@@ -1,0 +1,74 @@
+[
+{
+    "id": "0",
+    "titulo": "# O que faz uma desenvolvedora front-end?",
+    "categoria": "frontend",
+    "imagem": "/frontend/capa-1.png",
+    "video": "https://www.youtube.com/watch?v=ZY3-MFxVdEw",
+    "descricao": "O que é Front-end? Trabalhando na área os termos `HTML`, `CSS` e `JavaScript` fazem parte da rotina das desenvolvedoras e desenvolvedores. Mas o que eles fazem, afinal? \n\n Descubra com a Vanessa nesse episódio!"
+  },
+  {
+    "id": "1",
+    "titulo": "# O QUE É UM BANCO DE DADOS? | Computação para Curiosos",
+    "categoria": "frontend",
+    "imagem": "/frontend/capa-2.png",
+    "video": "https://www.youtube.com/watch?v=P6uiLQ6F7Mo",
+    "descricao": "No mundo altamente digitalizado em que vivemos: tudo vira dado. E esses dados, em sua maioria, são armazenados para que a gente, como usuário final possa consultar ou para que os cientistas de dados possam utiliza-los para aprimorar os serviços que usamos, preferencialmente com nosso consentimento! \n\n Nesse contexto, é bem provável que você já tenha se pergunta para onde vão todos esses dados...para os bancos de dados. Mas o que é exatamente um banco de dados? Por que precisamos deles para armazenar dados? O que é um Sistema de Gerenciamento de Banco de Dados (SGBD)? Qual a diferença entre banco de dados SQL e NoSQL? Qual a diferença entre banco de dados Relacional e Não-Relacional? \n\n Todas essas perguntas são respondidas pela Kizzy nesse vídeo. \n\n O QUE É UM BANCO DE DADOS? Computação para Curiosos 05"
+  },
+  {
+    "id": "2",
+    "titulo": "# O que é e o que faz quem trabalha com UX? User Experience e Usabilidade",
+    "categoria": "frontend",
+    "imagem": "/frontend/capa-3.png",
+    "video": "https://www.youtube.com/watch?v=FJhMCi07T4A",
+    "descricao": "Chegou o episódio com a musa brasileira de UX, a Carla de Bona! \n\n Entenda a Experiência do Usuário e porque ela é importante para qualquer negócio, seja de produtos ou serviços."
+  },
+  {
+    "id": "3",
+    "titulo": "# Carreira Backend: O que estudar?",
+    "categoria": "backend",
+    "imagem": "/backend/capa-1.png",
+    "video": "https://www.youtube.com/watch?v=DmgiRK-yZ_A",
+    "descricao": "O que será que um programador ou programadora backend precisa estudar pra trabalhar na área? \n\n Nesse vídeo listamos algumas das coisas de uma maneira a ser um roteiro do zero até montar APIS."
+  },
+  {
+    "id": "4",
+    "titulo": "# Coders4Tips - S01E04: GitHub CLI - Uma Nova Experiência no Github!",
+    "categoria": "backend",
+    "imagem": "/backend/capa-2.png",
+    "video": "https://www.youtube.com/watch?v=6o6-bKOZOEY",
+    "descricao": "Nesse vídeo vamos aprender um pouco mais o que seria o GitHub CLI e quais são as suas vantagens!"
+  },
+  {
+    "id": "5",
+    "titulo": "# Qual é a melhor linguagem de programação?",
+    "categoria": "backend",
+    "imagem": "/backend/capa-3.png",
+    "video": "https://www.youtube.com/watch?v=Uh-GNH-t89w",
+    "descricao": "`PHP`, `JavaScript`, `Python`, `Java` e outras... qual é a melhor? Como surgiram essas linguagens e quais as aplicações e usos de cada uma na aprendizagem e para o mercado? \n\n Descubra nesta conversa da Roberta Arcoverde e do Paulo Silveira."
+  },
+  {
+    "id": "6",
+    "titulo": "# Desenvolvimento Android",
+    "categoria": "mobile",
+    "imagem": "/mobile/capa-1.png",
+    "video": "https://www.youtube.com/watch?v=fWscDFHKgw8",
+    "descricao": "Um episódio focado no desenvolvimento de aplicações Android. \n\n Neste bate-papo, Paulo Silveira e Felipe Torres conversam sobre os primeiros passos para começar a desenvolver, quais as principais ferramentas do desenvolvimento mobile, como colocar sua aplicação no ar e mais!"
+  },
+  {
+    "id": "7",
+    "titulo": "# React Native EU 2019: Emily Janzer - The New React Native",
+    "categoria": "mobile",
+    "imagem": "/mobile/capa-2.png",
+    "video": "https://www.youtube.com/watch?v=52El0EUI6D0",
+    "descricao": "### Descrição Indisponível"
+  },
+  {
+    "id": "8",
+    "titulo": "# Como começar sua primeira app com o Flutter - Hello World",
+    "categoria": "mobile",
+    "imagem": "/mobile/capa-3.png",
+    "video": "https://www.youtube.com/watch?v=xSC8j3gl7xM",
+    "descricao": "Chegou a hora de criarmos nosso primeiro aplicativo com o Flutter e entender como fazer tudo funcionar! \n\n Esse é apenas um dos Alura+, vídeos curtos para você se atualizar sobre as tecnologias emergentes e modinhas do mundo tech...mas com muita seriedade! \n\n Você encontra todos esses conteúdos na plataforma da Alura, além de uma centena de cursos de tecnologia para alavancar a sua carreira!"
+  }
+]
