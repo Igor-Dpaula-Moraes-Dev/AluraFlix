@@ -1,32 +1,63 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Pencil, Trash2 } from 'lucide-react'
 import { VideoContexto } from '../../Context/useContext'
-import {Trash2} from 'lucide-react'
-import { FaEdit } from "react-icons/fa";
+
 
 const CardStyled = styled.div`
-border: 1px solid #000;
+border-radius: 0.7rem;
+width:27rem;
+height: 19rem;
+background-color: #101110;
 
 `
+const ImgCard = styled.figure`
+/* width:100%; */
 
-const Card = ({ video }) => {
+&>img{
+    display: block;
+    width:100%;
+}
+`
+const FooterStyled = styled.footer`
+display: flex;
+justify-content: space-around;
+align-items: center;
+height: 10%;
+padding-bottom: .5rem;
+`
+const Icon = styled.button`
+display: flex;
+align-items: center;
+font-size:1.3rem ;
+color: #fff;
+background-color: transparent;
+`
+
+const Card = ({ video, img }) => {
+    console.log(video)
     if (!video) {
-      return null; // Retorna null ou uma UI alternativa se o vídeo estiver indefinido
+        return null; // Retorna null ou uma UI alternativa se o vídeo estiver indefinido
     }
-  
-    const videoId = video.video.split('=')[1];
-  
 
-// const Card = () => {
-//     const {video} = VideoContexto()
-//     console.log(video[1]?.imagem)
-  
+    const videoId = video?.split('=')[1];
+
+
+    // const Card = () => {
+    //     const {video} = VideoContexto()
+    //     console.log(video[1]?.imagem)
+
+    
+    const {toggleModal} = VideoContexto() 
 
     return (
-    <CardStyled>
-           <img src={video[1]?.imagem} alt="" />
+        <CardStyled>
+            <ImgCard>
+                <img src={img} alt="" />
+            </ImgCard>
 
-           <iframe 
+
+            {/* <iframe 
             width="560"
             height="315" 
             // src={`https://www.youtube.com/embed/${video[0]?.video.split("=")[1]}`}
@@ -34,34 +65,24 @@ const Card = ({ video }) => {
             title="YouTube video player" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            />
-        <footer>
-            <div>
-            <FaEdit />
-            <Trash2 />
-            </div>
-        </footer>
-    </CardStyled>
-  )
+            allowFullScreen 
+            />*/}
+            <FooterStyled>
+            
+                <Icon onClick={()=> toggleModal()}>
+                    <Pencil/>
+                </Icon>
+                <Icon>
+                    <Trash2 />
+                </Icon>
+
+
+
+            </FooterStyled>
+
+        </CardStyled>
+    )
 }
 
-const CardList = () => {
-    const { video } = useContext(VideoContexto);
-    
-    if (!video || video.length === 0) {
-      return <p>Nenhum vídeo encontrado.</p>; // Retorna uma mensagem alternativa se o vídeo estiver indefinido ou vazio
-    }
-  
-    return (
-      <div>
-        {video.map((item, index) => (
-          <Card key={index} video={item} />
-        ))}
-      </div>
-    );
-  }
-  
-  export default CardList;
 
-// export default Card
+export default Card

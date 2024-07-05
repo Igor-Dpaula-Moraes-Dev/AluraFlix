@@ -4,7 +4,10 @@ export const ContextVideo= createContext()
 
 const ContextVideoProvider = ({children})=>{
 const [video,setVideo]= useState([])
-
+const [openModal, setOpenModal]= useState(false)
+const toggleModal =()=>{
+  setOpenModal(opendeModal => !openModal)
+}
     useEffect(()=>{
         const api= async()=>{
         
@@ -19,8 +22,8 @@ const [video,setVideo]= useState([])
     return(
 
     
-<ContextVideo.Provider value={{video}}>
-    {children}
+<ContextVideo.Provider value={{video,openModal,toggleModal}}>
+   {children}
 </ContextVideo.Provider>
  )
 }
