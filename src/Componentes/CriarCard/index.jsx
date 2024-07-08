@@ -12,19 +12,44 @@ background-color: #101110;
 
 `
 const ImgCard = styled.figure`
-/* width:100%; */
+/* max-width:90%; */
+max-height: 15.25rem;
+  display: flex;
+  flex: 1;
+  max-height: 244px;
+  /* z-index: -10; */
+  color: #F7F7F7;
+  font-size: 1.1rem;
+  transition: all .27s ease-in-out;
+
+  &:hover > figure {
+    cursor: pointer;
+    filter: grayscale(100%) blur(4px);
+    transition: all .27s ease-in-out;
+  }
 
 &>img{
     display: block;
-    width:100%;
+    width: 100%;
+    object-fit:cover;
+    border-radius: 0 0 2% 2%;
+    -webkit-mask-image: linear-gradient(to bottom, black 0% ,transparent 97%);
+    mask-image: linear-gradient(to bottom, black 0% ,transparent 97%);
+    transition: all .27s ease-in-out;
 }
+&:hover > figure > img {
+    transform: scale(1.05);
+    transition: all .27s ease-in-out;
+  }
+
 `
 const FooterStyled = styled.footer`
 display: flex;
 justify-content: space-around;
 align-items: center;
-height: 10%;
-padding-bottom: .5rem;
+/* min-height: 10%; */
+min-height: 15%;
+/* padding-bottom: .5rem; */
 `
 const Icon = styled.button`
 display: flex;

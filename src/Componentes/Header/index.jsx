@@ -2,6 +2,7 @@
 import React from 'react'
 import styled from "styled-components"
 import LogoMain from "/imagens/LogoMain.png"
+import { Link } from 'react-router-dom'
 
 
 const CabecalhoStyle = styled.header`
@@ -19,7 +20,7 @@ align-items: center;
     justify-content: space-evenly;
     gap:.5rem;
 }
-& >nav>div>button{
+& >nav>div>a{
     width:8rem;
     line-height: 2lh;
     border: 2px solid #fff;
@@ -31,8 +32,10 @@ align-items: center;
     color: var(--font-white);
     font-family: var(--font-source-sans);
     transition: 0.37s ease-out;
+    text-decoration: none;
+    text-align: center;
 }
-& >nav>div>button:hover{
+& >nav>div>a:hover{
     color: var(--standard-blue);
     border-color: var(--standard-blue);
     box-shadow: var(--blue-shadow-button);
@@ -47,8 +50,8 @@ const Header = () => {
             <nav>
                 <img src={LogoMain} alt="logo principal" />
                 <div>
-                    <button>Home</button>
-                    <button>Novo Video</button>
+                    <Link to={'/'} >Home</Link>
+                    <Link to={'cadastro'} >Novo Video</Link>
                 </div>
             </nav>
         </CabecalhoStyle>

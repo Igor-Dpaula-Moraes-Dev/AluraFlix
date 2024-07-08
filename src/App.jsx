@@ -1,11 +1,9 @@
 
-import { useEffect } from 'react'
-import Banner from './Componentes/Banner'
+
 import PaginaPadrao from './Rotas/PaginaPadrao'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
-import { VideoContexto } from './Context/useContext'
-
-
+import Home from './Rotas/Home'
+import Cadastro from './Rotas/Cadastro'
 function App() {
  
  
@@ -15,10 +13,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path={`/`} element={<PaginaPadrao/>}>
-        <Route index element={<Banner/>}/>
-
-       
-
+        <Route index element={<Home/>}/>
+        <Route path='cadastro' element={<Cadastro/>} />
         </Route>
       </Routes>
       

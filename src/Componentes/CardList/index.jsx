@@ -49,6 +49,7 @@ const Secao = styled.section`
 `
 const Videos = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 1.3rem;
   overflow: hidden;
 `
@@ -56,10 +57,9 @@ const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  padding: 1rem 2rem;
+ padding: 1rem 0rem;
   background-color: var(--dark-grey);
-`
-  
+` 
   
 
 const CardList = () => {

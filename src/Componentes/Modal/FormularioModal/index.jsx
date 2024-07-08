@@ -1,31 +1,39 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
+export const CaixaForm =styled.div`
+display: flex;
+justify-content: center;
+`
 const Forms = styled.form`
- display: flex; 
- flex-direction:column;
-border: 2px solid #d3d010;
+display: flex;
+/* position:; */
+width: 70%;
+flex-direction:column;
+/* border: 2px solid #d3d010; */
 align-items:center;
 gap:2rem;
-/* height:fit-content; */
+ height:fit-content;
 max-width: 60rem;
-/* overflow: hidden; */
+padding:5px;
 `
-const Label = styled.label`
+export const Label = styled.label`
  display: flex;
  gap: 1rem; 
-flex-direction: column;
-gap: 0.5rem;
+ flex-direction: column;
+ gap: 0.5rem;
+ color:#fff;
 /* border: 2px solid #eb1717; */
 `
-const InputModalStyled = styled.input`
-
- width: 35rem;
+export const InputModalStyled = styled.input`
+width: 25rem;
 height: 3.85rem;
 border: 2px solid #fff;
 border-radius: 16px;
 padding: 0.5rem;
+background-color: transparent;
+color: var(--font-white);
+border: 2px solid var(--light-blue);
 
 `
 const TitleForm = styled.h1`
@@ -35,42 +43,64 @@ color: var(--standard-blue);
 text-align:center;
 ;
 `
-const SelectStyled = styled.select`
- display: flex;
-width: 35rem;
+export const SelectStyled = styled.select`
+display: flex;
+width: 25rem;
 height: 3.85rem;
 border: 2px solid #fff;
 border-radius: 16px;
 padding: 0.5rem;
+background-color: transparent;
+color:#fff;
+border: 2px solid var(--light-blue);
+& >option{
+  
+  color: #000;
+}
 `
-const TextAreaStyled = styled.textarea`
+export const TextAreaStyled = styled.textarea`
 /* display: flex; */
-width: 35rem; 
+background: transparent;
+color:#fff;
+border: 2px solid var(--light-blue);
+border-radius: 15px;
+width: 25rem; 
 height: 7rem;
-border: 2px solid #fff;
 padding: 0.5rem;
+resize: none;
+overflow: auto;
 `
-const CaixaButtonStyled = styled.div`
+export const CaixaButtonStyled = styled.div`
 display: flex;
-justify-content: space-evenly;
+width: 68%;
+justify-content: space-between;
 align-items: center;
+gap: 5rem;
+
+padding: .5rem;
 `
-const ButtonStyled = styled.button`
+export const ButtonStyled = styled.button`
 width: 11.25rem; 
 max-width: 20rem;
 border-radius: 16px;
-padding: 1rem;
-  border: 2px solid #fff;
-  background: #03122f;
-  color: #fff;
-  cursor: pointer;
+padding: .5rem;
+border: 2px solid var(--light-blue);
+/* background: #03122f; */
+background-color: transparent;
+color: #fff;
+cursor: pointer;
+&:hover{
+  box-shadow: var(--blue-shadow-button) ;
 
+}
 `
+
 
 const FormModal = () => {
   return (
 
-    <Forms>
+    <CaixaForm>
+      <Forms>
       <TitleForm>Editar Card</TitleForm>
       <Label htmlFor='title'>Titulo
         <InputModalStyled 
@@ -108,11 +138,17 @@ const FormModal = () => {
         <TextAreaStyled id='descricao' name='descricao'/>
       </Label>
       <CaixaButtonStyled>
-          <ButtonStyled type='submit'>Guardar</ButtonStyled>
-          <ButtonStyled type='button'>Limpar</ButtonStyled>
+          <ButtonStyled type='submit' onClick={(e)=>{
+            e.preventDefault()
+          }}>Guardar</ButtonStyled>
+          <ButtonStyled type='button' onClick={(e)=>{
+            e.preventDefault()
+          }}>Limpar</ButtonStyled>
       </CaixaButtonStyled>
      
       </Forms>
+    </CaixaForm>
+    
 
   )
 }

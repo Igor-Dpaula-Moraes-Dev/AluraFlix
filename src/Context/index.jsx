@@ -11,7 +11,7 @@ const toggleModal =()=>{
     useEffect(()=>{
         const api= async()=>{
         
-        const repostaApi=  await fetch('https://videosaluflix.wiremockapi.cloud/videos')
+        const repostaApi=  await fetch('https://666c940949dbc5d7145e7fe2.mockapi.io/geek/api/aluflix')
         //   .then(resposta=> resposta.json()).then(resposta=>setVideo(resposta))
         const videos =await repostaApi.json()
         setVideo(videos)

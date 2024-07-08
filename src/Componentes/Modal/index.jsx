@@ -5,13 +5,18 @@ import { VideoContexto } from '../../Context/useContext'
 import FormModal from './FormularioModal'
 
 const Wrapper = styled.dialog`
- display: flex;
+/* display: flex; */
+overflow: auto;
+scrollbar-width: none;
+::-webkit-scrollbar {
+  display: none;
+}
 position: fixed;
-top: 48%;
+top: 50%;
 left: 50%;
 transform: translate(-50%,-50%); 
 min-height: 70vh;
-max-height: 80vh;
+max-height: 95vh;
 width:68vw;
 border-radius: 0.7rem;
 background: #03122f;
@@ -20,17 +25,18 @@ border:2px solid #f7f7f7;
 justify-content: center;
 align-items: center;
 padding: 2rem;
+ box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
 `
 
 const IconeFechamento = styled.button`
-position: absolute;
+position:absolute;
 top: 1rem;
 right: 1rem;
 border: none;
 cursor: pointer;
-/* width: 100%;
+
 display: flex;
-justify-content: end;
+/*justify-content: end;
 padding: 1rem; */
 background-color: transparent;
 color: #fff;
@@ -42,7 +48,7 @@ const Modal = () => {
             <IconeFechamento
             onClick={toggleModal}
             >
-                <CircleX size={30} />
+                <CircleX size={30}   />
             </IconeFechamento>
             <FormModal/>
         </Wrapper>
