@@ -3,6 +3,7 @@ import { VideoContexto } from "../../Context/useContext";
 import Card from "../CriarCard";
 import styled from "styled-components";
 import Tag from "../Tag";
+import { useEffect } from "react";
 
 // const CardVideoStyled = styled.main`
 // display: flex;
@@ -34,7 +35,7 @@ import Tag from "../Tag";
 //   background-color: #0bbe0b;
 // }
 // & > div> div> div>div {
-  
+
 //   max-width:27rem;
 //   overflow: hidden;
 //   border: 2px solid #d10e86;
@@ -51,42 +52,50 @@ const Videos = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1.3rem;
-  overflow: hidden;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #0657a3;
+  max-height:40rem ;
 `
 const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
   gap: 3rem;
- padding: 1rem 0rem;
+ padding: 1rem 3rem;
   background-color: var(--dark-grey);
-` 
-  
+`
+
 
 const CardList = () => {
   const { video } = VideoContexto()
   console.log(video)
 
-  if (!video || video.length === 0) {
-    return <p>Nenhum vídeo encontrado.</p>; // Retorna uma mensagem alternativa se o vídeo estiver indefinido ou vazio
-  }
-  const categorias = [
-    { nome: "Frontend", videos: video.filter(video => video.categoria === "frontend") },
-    { nome: "Backend", videos: video.filter(video => video.categoria === "backend") },
-    { nome: "Mobile", videos: video.filter(video => video.categoria === "mobile") },
-  ]
+  const categorias = []
+
+  useEffect(() => {
+    if (!video || video.length === 0) {
+      return <p>Nenhum vídeo encontrado.</p>; // Retorna uma mensagem alternativa se o vídeo estiver indefinido ou vazio
+    }
+    categorias = [
+      { nome: "Frontend", videos: video.filter(video => video.categoria === "frontend") },
+      { nome: "Backend", videos: video.filter(video => video.categoria === "backend") },
+      { nome: "Mobile", videos: video.filter(video => video.categoria === "mobile") },
+    ]
+  }, [video])
+
   return (
 
-  
+
 
     <Wrapper>
-      {categorias.map((secao) => (
+      {categorias?.map((secao) => (
         <Secao key={secao.nome}>
           <Tag secao={secao.nome}>
             {secao.nome}
           </Tag>
           <Videos>
-            {secao.videos.map((video, index) => {
-              return <Card key={index} img={video.imagem} video={video.video} />
+            {secao.videos?.map((video, index) => {
+              return <Card key={index} img={video.imagem} video={video.video} titulo={video.categoria} id={video.id} />
             })}
           </Videos>
         </Secao>

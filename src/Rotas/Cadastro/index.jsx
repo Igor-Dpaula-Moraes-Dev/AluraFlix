@@ -164,7 +164,8 @@ console.log(response)
    <CaixaCadastro>
     <TitleContainer> Criar Card</TitleContainer>
 <ContainerFirst>
-     <Label  htmlFor='titulo'> Titulo
+     <ErroStyled>
+       <Label  htmlFor='titulo'> Titulo
             <InputModalStyled name='titulo' 
             placeholder='Titulo'
             onChange={handleChange}
@@ -172,7 +173,9 @@ console.log(response)
             />
         </Label>
         {errors.titulo && <ErrorMessage>{errors.titulo}</ErrorMessage>}
-        <Label >Categorias
+     </ErroStyled>
+    <ErroStyled>
+      <Label >Categorias
         <SelectStyled 
         name='categoria'
         onChange={handleChange} 
@@ -184,9 +187,12 @@ console.log(response)
        </SelectStyled>
       </Label>
       {errors.categoria && <ErrorMessage>{errors.categoria}</ErrorMessage>}
+    </ErroStyled>
+        
 </ContainerFirst>
      <ContainerFirst>
-     <Label htmlFor='imagem'>Imagem
+      <ErroStyled>
+         <Label htmlFor='imagem'>Imagem
         <InputHover
           placeholder='insira a url da imagem'
           name='imagem' 
@@ -198,7 +204,9 @@ console.log(response)
        />
       </Label>
       {errors.imagem && <ErrorMessage>{errors.imagem}</ErrorMessage>}
-      <Label htmlFor='video'>Video
+      </ErroStyled>
+    <ErroStyled>
+       <Label htmlFor='video'>Video
         <InputHover
         placeholder='insira a url do video' 
         name='video' 
@@ -210,8 +218,11 @@ console.log(response)
         />
       </Label>
       {errors.video && <ErrorMessage>{errors.video}</ErrorMessage>} 
+    </ErroStyled>
+     
     </ContainerFirst>  
     <ContainerFirst>
+      <ErroStyled>
         <Label htmlFor='descricao'>Descrição
         <TextAreaStyled 
         id='descricao' 
@@ -220,6 +231,8 @@ console.log(response)
         value={formData.descricao}/>
       </Label>
       {errors.descricao && <ErrorMessage>{errors.descricao}</ErrorMessage>}
+      </ErroStyled>
+        
     </ContainerFirst>
     
         <ContainerFirst>
