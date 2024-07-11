@@ -8,6 +8,7 @@ const Wrapper = styled.dialog`
 /* display: flex; */
 overflow: auto;
 scrollbar-width: none;
+z-index: 20;
 ::-webkit-scrollbar {
   display: none;
 }
@@ -42,6 +43,8 @@ background-color: transparent;
 color: #fff;
 `
 const Modal = () => {
+  
+   
  const   {openModal,toggleModal}=VideoContexto()
     return (
         <Wrapper open={openModal}>

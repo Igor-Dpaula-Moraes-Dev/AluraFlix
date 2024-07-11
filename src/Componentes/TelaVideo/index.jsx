@@ -22,7 +22,7 @@ const PlayVideo = () => {
 const [videoApi,setVideosApi]= useState(null);
 
     const id= useParams ()
-console.log()
+
 
 async function chamaCard (id){
         const respostaApi=  await fetch(`https://666c940949dbc5d7145e7fe2.mockapi.io/geek/api/aluflix/${id.id}`)
@@ -31,7 +31,7 @@ async function chamaCard (id){
         ...videoConverter,
         video:videoConverter.video?.split("=")[1]
        }
-        console.log(videoConverter?.video)
+
         return video
  };
 
@@ -40,7 +40,7 @@ async function chamaCard (id){
     async function fetchData() {
          const video = await chamaCard(id)
         setVideosApi(video)
-        console.log(videoApi?.video)
+        
     }
     fetchData();
  } ,[])

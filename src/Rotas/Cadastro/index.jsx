@@ -7,6 +7,8 @@ import  {
      SelectStyled, 
      TextAreaStyled 
     } from '../../Componentes/Modal/FormularioModal'
+import { useNavigate } from 'react-router-dom'
+import { VideoContexto } from '../../Context/useContext'
 
 const MainStyled = styled.main`
 background-color: var(--dark-grey);
@@ -72,7 +74,7 @@ gap: .5rem;
 
 const Cadastro = () => {
  const [formData,setFormData]= useState({
-  
+
   titulo:'',
   categoria:'',
   imagem:'',
@@ -81,9 +83,11 @@ const Cadastro = () => {
 
  });
  const [errors,setErrors]= useState({});
+const navegar= useNavigate()
+const {setVideo} = VideoContexto()
 
 useEffect(()=>{
-  console.log(formData)
+ 
 },[formData])
 
  const validate =()=>{
@@ -136,6 +140,10 @@ console.log(response)
           video: '',
           descricao: '',
         });
+        await response.json();
+        setVideo(estado => ([...estado, response]))
+        navegar("/");
+
       } else {
         console.error('Erro ao enviar o formulário.');
         console.log(response)

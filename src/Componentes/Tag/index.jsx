@@ -32,7 +32,7 @@ padding: 0.5rem 1rem;
 `
 
 const Tag = ({ children, tipo, secao }) => {
- console.log(secao)
+
   return (
     <TagStyled $tipo={tipo} $section={secao}>
       {children}

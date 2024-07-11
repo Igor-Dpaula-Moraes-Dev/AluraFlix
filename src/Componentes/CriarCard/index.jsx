@@ -6,10 +6,6 @@ import { Link } from 'react-router-dom'
 
 
 const CardStyled = styled.div`
-/* border-radius: 0.7rem;
-width:27rem;
-height: 19rem;
-background-color: #101110; */
 position: relative;
   display: flex;
   flex-direction: column;
@@ -91,9 +87,8 @@ const FooterStyled = styled.footer`
 display: flex;
 justify-content: space-around;
 align-items: center;
-/* min-height: 10%; */
 height: 18%;
-/* padding-bottom: .5rem; */
+
 `
 const Icon = styled.button`
 display: flex;
@@ -101,6 +96,7 @@ align-items: center;
 font-size:1.3rem ;
 color: #fff;
 background-color: transparent;
+z-index: 10;
 `
 const Assistir = styled.div`
   position: absolute;
@@ -121,7 +117,6 @@ const Assistir = styled.div`
     position: absolute;
     top:-20px;
     left: -90px;
-    /* right: 45px; */
     width: 100%;
     height: 100%;
     color: ${props => {
@@ -157,30 +152,24 @@ const Assistir = styled.div`
 `
 
 const Card = ({ video, img, titulo,id }) => {
-    console.log(video)
+  const contexto = VideoContexto()
+    
+
     if (!video) {
         return null; // Retorna null ou uma UI alternativa se o vídeo estiver indefinido
     }
-
-    const videoId = video?.split('=')[1];
-
-
-    // const Card = () => {
-    //     const {video} = VideoContexto()
-    //     console.log(video[1]?.imagem)
-
     
     const {toggleModal} = VideoContexto() 
 
       
     const  apagarCard = async ()=>{
-    const {video,setVideo}= videoContexto()
+
       await fetch(`https://666c940949dbc5d7145e7fe2.mockapi.io/geek/api/aluflix/${id}`,{
         method: "DELETE"
         
       })
-      const newVideos = video.filter(video => video.id !== id)
-      setVideo(newVideos)
+      const newVideos = contexto.video?.filter(video => video.id !== id)
+      contexto.setVideo(newVideos)
      }
     return (
         <CardStyled $titulo={titulo}>
@@ -193,10 +182,10 @@ const Card = ({ video, img, titulo,id }) => {
          
             <FooterStyled>
             
-                <Icon onClick={()=> toggleModal()}>
+                <Icon onClick={()=> toggleModal(titulo,id)}>
                     <Pencil/>
                 </Icon>
-                <Icon >
+                <Icon onClick={apagarCard}>
                     <Trash2 />
                 </Icon>
                 <Assistir $titulo={titulo}>
