@@ -14,7 +14,7 @@ z-index: 20;
 }
 position: fixed;
 top: 50%;
-left: 50%;
+left:50%;
 transform: translate(-50%,-50%); 
 min-height: 70vh;
 max-height: 95vh;
@@ -22,11 +22,19 @@ width:68vw;
 border-radius: 0.7rem;
 background: #03122f;
 color: #fff;
-border:2px solid #f7f7f7;
+border:2px solid #fff;
 justify-content: center;
 align-items: center;
 padding: 2rem;
- box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+box-shadow: 0px 0px 15px var(--standard-blue); 
+ @media (max-width: 1380px) {
+    width:65%; 
+   
+  }
+  @media (max-width: 475px) {
+    left:48%;
+}
+
 `
 
 const IconeFechamento = styled.button`

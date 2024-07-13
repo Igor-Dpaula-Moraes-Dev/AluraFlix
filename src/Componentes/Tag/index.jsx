@@ -29,10 +29,18 @@ font-size:${props => props.$tipo === "banner" ? "3.17rem" : "2rem"};
 white-space: nowrap;
 gap: 1rem;
 padding: 0.5rem 1rem;
+@media (max-width: 500px) {
+    width: 100%;
+    font-size:2rem;
+  }
+  @media (max-width: 248px) {
+
+    font-size:100%;
+  }
 `
 
 const Tag = ({ children, tipo, secao }) => {
-
+ 
   return (
     <TagStyled $tipo={tipo} $section={secao}>
       {children}

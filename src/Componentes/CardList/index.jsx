@@ -37,6 +37,7 @@ const Videos = styled.div`
       return"#FFBA05 #FFF"
     }
   }};
+   
 
   }
 
@@ -65,7 +66,10 @@ const Videos = styled.div`
     }
   }};
   }
+  @media (max-width: 500px) {
+    width: 100%;
   
+  }
   /* scrollbar-darkshadow-color: #e9f5f3; */
   max-height:40rem ;
  
@@ -76,6 +80,11 @@ const Wrapper = styled.main`
   gap: 3rem;
  padding: 1rem 3rem;
   background-color: var(--dark-grey);
+  
+  @media (max-width: 500px) {
+    width: 100%;
+    font-size:2rem;
+  }
 ` 
   
 

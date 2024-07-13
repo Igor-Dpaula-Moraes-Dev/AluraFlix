@@ -10,7 +10,7 @@ position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  width: 25rem;
+  width: 24rem;
   height: 18rem;
   border-radius: .5rem;
   box-shadow: ${props => {
@@ -39,7 +39,10 @@ position: relative;
     transform: scale(1.05);
     transition: all .27s ease-in-out;
   }
-
+  @media (max-width: 500px) {
+    width: 100%;
+    font-size: 1rem;
+  }
 `
 const ImgCard = styled.figure`
 /* max-width:90%; */
@@ -97,6 +100,10 @@ font-size:1.3rem ;
 color: #fff;
 background-color: transparent;
 z-index: 10;
+
+@media (max-width: 500px) {
+    font-size: 0.3rem;
+  }
 `
 const Assistir = styled.div`
   position: absolute;

@@ -10,11 +10,17 @@ justify-content: center;
 align-items: center;
 `
 const Tela =styled.iframe`
-width: 33.56rem;
-height:18.87rem;
+width: 60vw;
+height:70vh;
 border-radius: 16px;
 border: 1px solid #074996;
 box-shadow:  0px 1px 10px  #074996;
+@media (max-width: 600px) {
+     width: 85vw; // Ajustando a largura para telas menores
+     height:35vh;
+    font-size: 1rem; // Ajustando o tamanho da fonte para telas menores
+    border: 2px solid #ffff; 
+  }
 `
 
 

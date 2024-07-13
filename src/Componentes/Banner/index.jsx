@@ -43,7 +43,7 @@ const BannerStyle = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    /* border: 2px solid #2271D1; */
     color: #fff;
     top: 50%;
     left: 50%;
@@ -54,26 +54,66 @@ const BannerStyle = styled.div`
     text-align: center;
     z-index: 1;
     gap: 2rem;
-   
+    @media (max-width: 1270px) {
+      flex-direction: column;
+      width: 90%;
+      padding: 10px;
+      gap: 1rem;
+    }
+    @media (max-width: 768px) {
+      top: 60%;
+      width: 95%;
+    }
    
      }
+     & section >img{
+      border: 2px solid #2271D1;
+      border-radius: 16px;
+      @media (max-width: 1270px) {
+      max-width: 100%;
+    }
+
+      }
+       display: flex; 
+     
      & > section > div{
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap:.5rem;
-      
       width:52rem;
       height: 20rem;
-    /* background-color: #d11717; */
+    // background-color: #d11717; 
+    @media (max-width: 1270px) {
+      width: 100%;
+    }
 
+    @media (max-width: 840px) {
+      align-items: center;
+      text-align: center;
+    }
      }
      & > section > div>h3{
       font-size: 2rem;
       text-align: left;
+      @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 840px) {
+      text-align: center;
+    }
      }
      & > section > div>p{
       text-align: left;
+
+      @media (max-width: 768px) {
+      font-size: .7rem;
+    }
+
+    @media (max-width: 840px) {
+      text-align: center;
+    }
      }
 `
 

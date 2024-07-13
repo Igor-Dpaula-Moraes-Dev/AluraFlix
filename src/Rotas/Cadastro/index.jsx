@@ -2,32 +2,49 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import  {
      ButtonStyled, 
-     InputModalStyled,
+     InputModalStyled as OriginalInputModalStyled,
      Label,
-     SelectStyled, 
-     TextAreaStyled 
+     SelectStyled as OriginalSelectStyled, 
+     TextAreaStyled as OriginalTextAreaStyled
     } from '../../Componentes/Modal/FormularioModal'
 import { useNavigate } from 'react-router-dom'
 import { VideoContexto } from '../../Context/useContext'
 
 const MainStyled = styled.main`
+display: flex;
+flex-direction: column;
+/* flex: 1; */
 background-color: var(--dark-grey);
-height: fit-content;
-overflow: hidden;
+ min-height:90vh;
+overflow:hidden;
 font-family: var( --font-roboto);
-padding: 0 3rem;
+padding:3rem;
 scrollbar-width:thin;
 `
 const TitleStyled = styled.h1`
 font-size: 3.75rem;
 text-align: center;
 color: var(--font-white);
+  
+@media (max-width: 800px) {
+    width: 100%;
+    font-size:2.25rem;
+  }
+  @media (max-width: 500px) {
+ font-size:2rem;
+}
 `
 const SubTitle = styled.h3`
 font-size: 1.25rem;
 text-align: center;
 color: var(--font-white);
 font-family: var( --font-roboto);
+@media (max-width: 800px) {
+  font-size:1rem;
+  }
+  @media (max-width: 500px) {
+ font-size:.9rem;
+}
 `
 const CaixaCadastro = styled.div`
 display: flex;
@@ -43,12 +60,29 @@ font-weight: 500;
 color: #fff;
 text-align: left;
 width: 100%;
+@media (max-width: 800px) {
+ font-size:1.75rem;
+}
+@media (max-width: 500px) {
+ font-size:1.40rem;
+}
+
 
 `
 const ContainerFirst = styled.div`
 display: flex;
 width: 100%;
 gap: 2rem;
+  
+@media (max-width: 882px) {
+    width: 100%;
+    font-size:1rem;
+   
+  }
+
+  @media (max-width: 562px) {
+   flex-direction: column;
+  }
 `
 const InputHover =styled.input`
 width: 25rem;
@@ -59,6 +93,11 @@ padding: 0.5rem;
 background-color: transparent;
 color: var(--font-white);
 border: 2px solid var(--light-blue);
+@media (max-width: 882px) {
+    width: 100%;
+    font-size:1rem;
+  
+  }
 
 `
 const ErrorMessage = styled.p`
@@ -70,6 +109,48 @@ display: flex;
 flex-direction: column;
 gap: .5rem;
 
+`
+const SelectStyled = styled(OriginalSelectStyled)`
+  width: 25rem; // Largura padrão
+  height: 3.85rem; // Altura padrão
+  border: 2px solid var(--light-blue);
+  border-radius: 16px;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: var(--font-white);
+
+  @media (max-width: 882px) {
+    width: 100%; // Ajustando a largura para telas menores
+    font-size: 1rem; // Ajustando o tamanho da fonte para telas menores
+  }
+`
+const InputModalStyled = styled(OriginalInputModalStyled)`
+  width: 25rem; // Largura padrão
+  height: 3.85rem; // Altura padrão
+  border: 2px solid var(--light-blue);
+  border-radius: 16px;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: var(--font-white);
+
+  @media (max-width: 882px) {
+    width: 100%; // Ajustando a largura para telas menores
+    font-size: 1rem; // Ajustando o tamanho da fonte para telas menores
+  }
+`
+const TextAreaStyled = styled(OriginalTextAreaStyled)`
+  width: 25rem; // Largura padrão
+  height: 3.85rem; // Altura padrão
+  border: 2px solid var(--light-blue);
+  border-radius: 16px;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: var(--font-white);
+resize: none;
+  @media (max-width: 882px) {
+    width: 100%; // Ajustando a largura para telas menores
+    font-size: 1rem; // Ajustando o tamanho da fonte para telas menores
+  }
 `
 
 const Cadastro = () => {
@@ -231,7 +312,7 @@ console.log(response)
     </ContainerFirst>  
     <ContainerFirst>
       <ErroStyled>
-        <Label htmlFor='descricao'>Descrição
+        <Label htmlFor='descricao'> Descrição
         <TextAreaStyled 
         id='descricao' 
         name='descricao' 
